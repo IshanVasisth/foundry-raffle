@@ -113,7 +113,7 @@ test/
 ### Installation
 
 ```bash
-git clone https://github.com/<your-username>/foundry-raffle
+git clone https://github.com/IshanVasisth/foundry-raffle
 cd foundry-raffle
 forge install
 ```
