@@ -16,6 +16,7 @@ A decentralized, automated raffle system built with Solidity, powered by **Chain
 - [Security Considerations](#security-considerations)
 - [Contract Details](#contract-details)
 - [Network Configuration](#network-configuration)
+- [Verified Deployment](#verified-deployment)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -296,6 +297,18 @@ forge coverage
 | Entrance Fee | 0.01 ETH | 0.01 ETH |
 | Interval | 30 seconds | 30 seconds |
 | Callback Gas Limit | 500,000 | 500,000 |
+
+---
+
+## Verified Deployment
+
+The contract is deployed and verified on Sepolia testnet.
+
+| | |
+|---|---|
+| **Network** | Sepolia Testnet |
+| **Contract Address** | [`0xE19aB827a2b5EBCB2475A0d7B6034da8c4e2197B`](https://sepolia.etherscan.io/address/0xE19aB827a2b5EBCB2475A0d7B6034da8c4e2197B) |
+| **Etherscan** | [View on Etherscan](https://sepolia.etherscan.io/address/0xE19aB827a2b5EBCB2475A0d7B6034da8c4e2197B) |
 
 ---
 
