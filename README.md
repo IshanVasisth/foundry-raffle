@@ -1,10 +1,3 @@
-## Raffle Contract
-
-### About
-**Raffle contract is a smart contract that lets anyone buy a ticket.**
-**The contract then calls Chainlink VRF for a verifiably random number and settles the lottery.**
-**We use ChainLink Automation to run this draw at regular intervals.**
-
 # 🎰 Provably Fair On-Chain Raffle
 
 A decentralized, automated raffle system built with Solidity, powered by **Chainlink VRF v2.5** for verifiable randomness and **Chainlink Automation** for trustless upkeep execution.
@@ -113,9 +106,9 @@ test/
 ### Installation
 
 ```bash
-git clone https://github.com/IshanVasisth/foundry-raffle
+git clone https://github.com/ishanvasisth/foundry-raffle
 cd foundry-raffle
-forge install
+make install
 ```
 
 ### Environment Setup
@@ -124,8 +117,10 @@ Create a `.env` file in the root:
 
 ```env
 SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/<YOUR_KEY>
-PRIVATE_KEY=<YOUR_PRIVATE_KEY>
+PRIVATE_KEY=<YOUR_DEPLOYER_PRIVATE_KEY>
 ETHERSCAN_API_KEY=<YOUR_ETHERSCAN_KEY>
+ANVIL_RPC_URL=http://localhost:8545
+PRIVATE_KEY2=<YOUR_ANVIL_PRIVATE_KEY>
 ```
 
 Load the environment:
@@ -147,7 +142,7 @@ Spins up a local chain, deploys mock VRF coordinator and LINK token, creates and
 anvil
 
 # Deploy
-forge script script/DeployRaffle.s.sol --rpc-url http://localhost:8545 --broadcast
+make deploy-anvil
 ```
 
 ### Sepolia Testnet
@@ -155,12 +150,7 @@ forge script script/DeployRaffle.s.sol --rpc-url http://localhost:8545 --broadca
 Before deploying to Sepolia, ensure your `HelperConfig.s.sol` has the correct `subscriptionId` for your Chainlink VRF subscription. You can create one at [vrf.chain.link](https://vrf.chain.link).
 
 ```bash
-forge script script/DeployRaffle.s.sol \
-  --rpc-url $SEPOLIA_RPC_URL \
-  --private-key $PRIVATE_KEY \
-  --broadcast \
-  --verify \
-  --etherscan-api-key $ETHERSCAN_API_KEY
+make deploy-sepolia
 ```
 
 ### Standalone Subscription Scripts
